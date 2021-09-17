@@ -28,24 +28,39 @@ function triVol(a,b,c,h) {
 //declaring variables for the functions
 var cuVol, cyVol, trVol
 
+//asked the user what they want to have solved
+console.log("Would you like to solve for the volume of a cube, triangular prism, or cube?")
+console.log("Cube [1]")
+console.log("Triangular Prism [2]")
+console.log("Cylinder [3]")
+var equation = prompt("Choose an equation: ")
+
 //Tells you to enter numbers
-var el = prompt("Enter side length of a cube: ")
-cuVol = cubeVol(el)
+if(equation == 1) {
+    var el = prompt("Enter side length of a cube: ")
+    cuVol = cubeVol(el)
+    console.log("The volume of the cube is " + cuVol)
+}
 
-var tA = prompt("Enter side a of the triangular prism: ")
-var tB = prompt("Enter side b: ")
-var tC = prompt("Enter side c: ")
-var tH = prompt("Enter the height of the triangular prism: ")
-trVol = triVol(tA, tB, tC, tH)
+else if(equation == 2){
+    var tA = prompt("Enter side a of the triangular prism: ")
+    var tB = prompt("Enter side b: ")
+    var tC = prompt("Enter side c: ")
+    var tH = prompt("Enter the height of the triangular prism: ")
+    trVol = triVol(tA, tB, tC, tH)
+    console.log("The volume of the triangular prism is " + trVol)
+}
 
-var rad = prompt("Enter radius of a cylinder: ")
-var height = prompt("Enter height of a cylinder: ")
-cyVol = cylVol(rad, height)
+else if(equation == 3) {
+    var rad = prompt("Enter radius of a cylinder: ")
+    var height = prompt("Enter height of a cylinder: ")
+    cyVol = cylVol(rad, height)
+    console.log("The volume of the cylinder is "+ cyVol)
+}
 
-//outputs the answers to the calculations
-console.log("The volume of the cube is " + cuVol)
-console.log("The volume of the triangular prism is " + trVol)
-console.log("The volume of the cylinder is "+ cyVol)
+else {
+    console.log("That isn't an option!")
+}
 
 /*
 This was an descently interesting project to do since I am very new to programming at the time of writing this.
